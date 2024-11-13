@@ -21,9 +21,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
 import javax.swing.WindowConstants;
 
-import net.java.dev.genesis.annotation.ViewHandler;
-
 import org.fpij.jitakyoei.util.DatabaseManager;
+import net.java.dev.genesis.annotation.ViewHandler;
 
 /**
  * @author wansoul

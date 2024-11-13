@@ -3,11 +3,11 @@ package org.fpij.jitakyoei.model.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.fpij.jitakyoei.model.validator.Validator;
-import org.fpij.jitakyoei.util.DatabaseManager;
-
 import com.db4o.ObjectSet;
 import com.db4o.ext.ExtObjectContainer;
+
+import org.fpij.jitakyoei.model.validator.Validator;
+import org.fpij.jitakyoei.util.DatabaseManager;
 
 public class DAOImpl<E> implements DAO<E> {
 

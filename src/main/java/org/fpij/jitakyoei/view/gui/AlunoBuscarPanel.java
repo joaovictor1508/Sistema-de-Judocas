@@ -18,11 +18,11 @@ import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
-import org.fpij.jitakyoei.model.beans.Aluno;
-import org.fpij.jitakyoei.view.AlunoBuscarView;
-
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
+
+import org.fpij.jitakyoei.model.beans.Aluno;
+import org.fpij.jitakyoei.view.AlunoBuscarView;
 
 /**
  * @author wansoul

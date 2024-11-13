@@ -2,6 +2,8 @@ package org.fpij.jitakyoei.model;
 
 import java.util.Date;
 
+import org.junit.BeforeClass;
+
 import org.fpij.jitakyoei.model.beans.Aluno;
 import org.fpij.jitakyoei.model.beans.Endereco;
 import org.fpij.jitakyoei.model.beans.Entidade;
@@ -9,7 +11,6 @@ import org.fpij.jitakyoei.model.beans.Filiado;
 import org.fpij.jitakyoei.model.beans.Professor;
 import org.fpij.jitakyoei.model.beans.Rg;
 import org.fpij.jitakyoei.util.DatabaseManager;
-import org.junit.BeforeClass;
 
 public class ModelIntegrationTests {
 //	private static DAO<Aluno> alunoDao;
