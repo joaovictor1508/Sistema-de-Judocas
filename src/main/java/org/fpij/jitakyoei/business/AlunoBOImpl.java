@@ -9,7 +9,7 @@ import org.fpij.jitakyoei.util.FiliadoID;
 import org.fpij.jitakyoei.view.AppView;
 
 public class AlunoBOImpl implements AlunoBO {
-	private static DAO<Aluno> dao = new DAOImpl<Aluno>(Aluno.class);
+	protected static DAO<Aluno> dao = new DAOImpl<Aluno>(Aluno.class);
 	private AppView view;
 
 	public AlunoBOImpl(AppView view) {

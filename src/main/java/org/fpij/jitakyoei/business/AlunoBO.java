@@ -1,4 +1,4 @@
-package java.org.fpij.jitakyoei.business;
+package org.fpij.jitakyoei.business;
 
 import java.util.List;
 
