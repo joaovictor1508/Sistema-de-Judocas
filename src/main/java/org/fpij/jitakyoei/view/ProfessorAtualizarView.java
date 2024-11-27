@@ -45,6 +45,29 @@ public class ProfessorAtualizarView implements ViewComponent{
 		public void actionPerformed(ActionEvent arg0) {
 			Professor professor = professorForm.getProfessor();
 			try {
+				if (professor.getFiliado().getNome() == null || professor.getFiliado().getNome().isEmpty()) {
+					JOptionPane.showMessageDialog(gui, "Erro: O nome do aluno não pode ser vazio!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return; 
+				}
+	
+				if (professor.getFiliado().getCpf() == null || professor.getFiliado().getCpf().isEmpty()) {
+					JOptionPane.showMessageDialog(gui, "Erro: O CPF do aluno não pode ser vazio!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return; 
+				}
+	
+				if (professor.getFiliado().getEmail() == null || professor.getFiliado().getEmail().isEmpty()) {
+					JOptionPane.showMessageDialog(gui, "Erro: O e-mail do aluno não pode ser vazio!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+	
+				if (professor.getFiliado().getDataNascimento() == null) {
+					JOptionPane.showMessageDialog(gui, "Erro: A data de nascimento do aluno não pode ser vazia!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return; 
+				}
 				facade.updateProfessor(professor);
 				JOptionPane.showMessageDialog(gui, "Professor atualizado com sucesso!");
 				parent.removeTabPanel(gui);

@@ -18,10 +18,15 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 import com.toedter.calendar.JDateChooser;
+
+//import javafx.scene.input.KeyEvent;
 
 /**
  * @author wansoul
@@ -101,7 +106,7 @@ public class FiliadoPanel extends JPanel {
 		label5 = new JLabel();
 		registroCbj = new JTextField();
 		label12 = new JLabel();
-		cpf = new JTextField();
+		cpf = new JTextField(11);
 		label6 = new JLabel();
 		email = new JTextField();
 		label2 = new JLabel();
@@ -136,7 +141,7 @@ public class FiliadoPanel extends JPanel {
 			"5*($lgap, default), $lgap, 107dlu:grow"));
 
 		//---- label1 ----
-		label1.setText("Nome:");
+		label1.setText("Nome*:");
 		label1.setName("label1");
 		add(label1, cc.xy(2, 2));
 
@@ -154,16 +159,29 @@ public class FiliadoPanel extends JPanel {
 		add(registroCbj, cc.xy(4, 4));
 
 		//---- label12 ----
-		label12.setText("CPF:");
+		label12.setText("CPF*:");
 		label12.setName("label12");
 		add(label12, cc.xy(6, 4));
 
 		//---- cpf ----
 		cpf.setName("cpf");
-		add(cpf, cc.xywh(8, 4, 3, 1));
+		cpf.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if (cpf.getText().length() >= 11) {
+					e.consume(); 
+				}
+				char c = e.getKeyChar();
+				if (!Character.isDigit(c)) {
+					e.consume();
+				}
+			}
+		});
+
+    add(cpf, cc.xywh(8, 4, 3, 1));
 
 		//---- label6 ----
-		label6.setText("E-mail");
+		label6.setText("E-mail*");
 		label6.setName("label6");
 		add(label6, cc.xy(2, 6));
 
@@ -172,7 +190,7 @@ public class FiliadoPanel extends JPanel {
 		add(email, cc.xy(4, 6));
 
 		//---- label2 ----
-		label2.setText("Data de Nascimento:");
+		label2.setText("Data de Nascimento*:");
 		label2.setName("label2");
 		add(label2, cc.xy(6, 6));
 
@@ -205,6 +223,18 @@ public class FiliadoPanel extends JPanel {
 
 		//---- telefone1 ----
 		telefone1.setName("telefone1");
+		telefone1.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if (telefone1.getText().length() >= 11) {
+					e.consume(); 
+				}
+				char c = e.getKeyChar();
+				if (!Character.isDigit(c)) {
+					e.consume();
+				}
+			}
+		});
 		add(telefone1, cc.xy(4, 10));
 
 		//---- label11 ----
@@ -214,6 +244,18 @@ public class FiliadoPanel extends JPanel {
 
 		//---- telefone2 ----
 		telefone2.setName("telefone2");
+		telefone2.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if (telefone2.getText().length() >= 11) {
+					e.consume(); 
+				}
+				char c = e.getKeyChar();
+				if (!Character.isDigit(c)) {
+					e.consume();
+				}
+			}
+		});
 		add(telefone2, cc.xywh(8, 10, 3, 1));
 
 		//======== tabbedPane1 ========
