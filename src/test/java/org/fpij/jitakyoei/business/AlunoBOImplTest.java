@@ -21,13 +21,10 @@ public class AlunoBOImplTest {
 
     @Before
     public void setUp() {
-        // Cria mocks para as dependências
         mockDAO = mock(DAO.class);
         mockView = mock(AppView.class);
         
-        // Cria uma instância de AlunoBOImpl com os mocks
         alunoBO = new AlunoBOImpl(mockView);
-        // Injeta o DAO mockado
         AlunoBOImpl.dao = mockDAO;
     }
 
