@@ -46,6 +46,23 @@ public class EntidadeCadastrarView implements ViewComponent {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			try {
+				if (entidadeForm.getEntidade().getNome() == null || entidadeForm.getEntidade().getNome().isEmpty()) {
+					JOptionPane.showMessageDialog(gui, "Erro: O nome da entidade não pode ser vazio!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return;  
+				}
+	
+				if (entidadeForm.getEntidade().getCnpj() == null || entidadeForm.getEntidade().getCnpj().isEmpty()) {
+					JOptionPane.showMessageDialog(gui, "Erro: O CNPJ da entidade não pode ser vazio!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return;  
+				}
+	
+				if (entidadeForm.getEntidade().getTelefone1() == null || entidadeForm.getEntidade().getTelefone1().isEmpty()) {
+					JOptionPane.showMessageDialog(gui, "Erro: O telefone da entidade não pode ser vazio!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return;  
+				}
 				facade.createEntidade(entidadeForm.getEntidade());
 				JOptionPane.showMessageDialog(gui, "Entidade cadastrada com sucesso!");
 				parent.removeTabPanel(gui);
