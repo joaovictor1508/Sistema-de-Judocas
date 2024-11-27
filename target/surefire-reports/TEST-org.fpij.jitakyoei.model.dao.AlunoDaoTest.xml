@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.fpij.jitakyoei.model.dao.AlunoDaoTest" time="0.041" tests="2" errors="2" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="18"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\target\test-classes;C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\target\classes;C:\Users\gmira\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\gmira\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="18"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-18.0.1.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\gmira\AppData\Local\Temp\surefire11088620768061010510\surefirebooter13440241067145085579.jar C:\Users\gmira\AppData\Local\Temp\surefire11088620768061010510 2024-11-13T20-43-58_441-jvmRun1 surefire1945303643103149499tmp surefire_01076396723063435078tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\target\test-classes;C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\target\classes;C:\Users\gmira\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\gmira\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\gmira"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-04-22"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-18.0.1.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\gmira\AppData\Local\Temp\surefire11088620768061010510\surefirebooter13440241067145085579.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="18.0.1.1+2-6"/>
+    <property name="user.name" value="gmira"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\gmira\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\gmira\AppData\Local\Temp\"/>
+    <property name="java.version" value="18.0.1.1"/>
+    <property name="user.dir" value="C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-18.0.1.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\TDM-GCC-64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Users\gmira\Downloads\apache-maven-3.9.9\bin;C:\Program Files\Java\jdk-18.0.1.1\bin;C:\Users\gmira\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\gmira\AppData\Local\Programs\Python\Python312\;C:\Users\gmira\AppData\Local\Microsoft\WindowsApps;C:\Users\gmira\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gmira\AppData\Local\GitHubDesktop\bin;C:\Users\gmira\.dotnet\tools;C:\Users\gmira\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\gmira\AppData\Roaming\npm;C:\Users\gmira\Downloads\apache_maven\bin;C:\Program Files\Java\jdk-18.0.1.1\bin;C:\Users\gmira\Downloads\apache-maven-3.9.9\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="18.0.1.1+2-6"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="62.0"/>
+  </properties>
+  <testcase name="org.fpij.jitakyoei.model.dao.AlunoDaoTest" classname="org.fpij.jitakyoei.model.dao.AlunoDaoTest" time="0.041">
+    <error message="com/db4o/Db4o" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: com/db4o/Db4o
+	at org.fpij.jitakyoei.model.dao.AlunoDaoTest.setUp(AlunoDaoTest.java:66)
+Caused by: java.lang.ClassNotFoundException: com.db4o.Db4o
+	at org.fpij.jitakyoei.model.dao.AlunoDaoTest.setUp(AlunoDaoTest.java:66)
+</error>
+  </testcase>
+  <testcase name="org.fpij.jitakyoei.model.dao.AlunoDaoTest" classname="org.fpij.jitakyoei.model.dao.AlunoDaoTest" time="0.041">
+    <error message="Cannot invoke &quot;org.fpij.jitakyoei.model.dao.DAO.list()&quot; because &quot;org.fpij.jitakyoei.model.dao.AlunoDaoTest.alunoDao&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke "org.fpij.jitakyoei.model.dao.DAO.list()" because "org.fpij.jitakyoei.model.dao.AlunoDaoTest.alunoDao" is null
+	at org.fpij.jitakyoei.model.dao.AlunoDaoTest.clearDatabase(AlunoDaoTest.java:70)
+	at org.fpij.jitakyoei.model.dao.AlunoDaoTest.closeDatabase(AlunoDaoTest.java:150)
+</error>
+  </testcase>
+</testsuite>
