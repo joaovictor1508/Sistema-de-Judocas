@@ -35,12 +35,17 @@ public class EntidadeAtualizarPanel extends JPanel {
 		return cancelar;
 	}
 
+	public JButton getApagar(){
+		return apagar;
+	}
+
 	private void initComponents() {
 		// JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
 		label1 = new JLabel();
 		entidadePanel = new EntidadePanel();
 		atualizarEntidade = new JButton();
 		cancelar = new JButton();
+		apagar = new JButton();
 		CellConstraints cc = new CellConstraints();
 
 		//======== this ========
@@ -62,12 +67,17 @@ public class EntidadeAtualizarPanel extends JPanel {
 		//---- atualizarEntidade ----
 		atualizarEntidade.setText("Atualizar");
 		atualizarEntidade.setName("atualizarEntidade");
-		add(atualizarEntidade, cc.xy(3, 5));
+		add(atualizarEntidade, cc.xy(1, 5));
 
 		//---- cancelar ----
 		cancelar.setText("Cancelar");
 		cancelar.setName("cancelar");
-		add(cancelar, cc.xy(5, 5));
+		add(cancelar, cc.xy(3, 5));
+
+		//---- apagar ----
+		apagar.setText("Apagar");
+		apagar.setName("apagar");
+		add(apagar, cc.xy(5, 5));
 		// JFormDesigner - End of component initialization  //GEN-END:initComponents
 	}
 
@@ -76,5 +86,6 @@ public class EntidadeAtualizarPanel extends JPanel {
 	private EntidadePanel entidadePanel;
 	private JButton atualizarEntidade;
 	private JButton cancelar;
+	private JButton apagar;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables
 }

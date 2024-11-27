@@ -36,6 +36,10 @@ public class MainAppView implements AppView {
 		 */
 	}
 
+	public MainAppFrame getFrame() {
+        return frame;
+    }
+
 	public void displayException(Exception e) {
 		JOptionPane.showMessageDialog(frame, e.getMessage());
 	}

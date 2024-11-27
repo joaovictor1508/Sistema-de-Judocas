@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 
 import org.fpij.jitakyoei.facade.AppFacade;
 import org.fpij.jitakyoei.model.beans.Aluno;
+import org.fpij.jitakyoei.model.dao.DAO;
+import org.fpij.jitakyoei.model.dao.DAOImpl;
 import org.fpij.jitakyoei.view.forms.AlunoForm;
 import org.fpij.jitakyoei.view.gui.AlunoAtualizarPanel;
 
@@ -24,6 +26,7 @@ public class AlunoAtualizarView implements ViewComponent{
 		alunoForm.setAluno(aluno);
 		gui.getAtualizar().addActionListener(new AtualizarActionHandler());
 		gui.getCancelar().addActionListener(new CancelarActionHandler());
+		gui.getApagar().addActionListener(new ApagarActionHandler());
 	}
 	
 	@Override
@@ -46,6 +49,29 @@ public class AlunoAtualizarView implements ViewComponent{
 		public void actionPerformed(ActionEvent arg0) {
 			Aluno aluno = alunoForm.getAluno();
 			try {
+				if (aluno.getFiliado().getNome() == null || aluno.getFiliado().getNome().isEmpty()) {
+					JOptionPane.showMessageDialog(gui, "Erro: O nome do aluno não pode ser vazio!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return; 
+				}
+	
+				if (aluno.getFiliado().getCpf() == null || aluno.getFiliado().getCpf().isEmpty()) {
+					JOptionPane.showMessageDialog(gui, "Erro: O CPF do aluno não pode ser vazio!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return; 
+				}
+	
+				if (aluno.getFiliado().getEmail() == null || aluno.getFiliado().getEmail().isEmpty()) {
+					JOptionPane.showMessageDialog(gui, "Erro: O e-mail do aluno não pode ser vazio!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+	
+				if (aluno.getFiliado().getDataNascimento() == null) {
+					JOptionPane.showMessageDialog(gui, "Erro: A data de nascimento do aluno não pode ser vazia!", 
+												  "Erro de Validação", JOptionPane.ERROR_MESSAGE);
+					return; 
+				}
 				facade.updateAluno(aluno);
 				JOptionPane.showMessageDialog(gui, "Aluno atualizado com sucesso!");
 				parent.removeTabPanel(gui);
@@ -64,6 +90,25 @@ public class AlunoAtualizarView implements ViewComponent{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			parent.removeTabPanel(gui);
+		}
+	}
+
+	public class ApagarActionHandler implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+			Aluno aluno = alunoForm.getAluno();
+			DAO<Aluno> dao = new DAOImpl<Aluno>(Aluno.class);
+			int confirmacao = JOptionPane.showConfirmDialog(
+					parent.getFrame(), 
+					"Tem certeza que deseja apagar este aluno?",
+					"Confirmar Exclusão",
+					JOptionPane.YES_NO_OPTION,
+					JOptionPane.WARNING_MESSAGE 
+			);
+
+			if (confirmacao == JOptionPane.YES_OPTION) {
+				dao.delete(aluno);
+				parent.removeTabPanel(gui);
+			}
 		}
 	}
 }
