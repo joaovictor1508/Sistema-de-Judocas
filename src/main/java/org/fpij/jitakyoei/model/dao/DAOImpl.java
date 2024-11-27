@@ -11,7 +11,7 @@ import org.fpij.jitakyoei.util.DatabaseManager;
 
 public class DAOImpl<E> implements DAO<E> {
 
-	private static ExtObjectContainer db = DatabaseManager.getConnection();
+	protected static ExtObjectContainer db = DatabaseManager.getConnection();
 	private Class<E> clazz;
 	private Validator<E> validator;
 	private boolean useEquals;

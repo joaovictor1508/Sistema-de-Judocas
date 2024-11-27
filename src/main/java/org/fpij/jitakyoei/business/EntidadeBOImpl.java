@@ -10,7 +10,7 @@ import org.fpij.jitakyoei.view.AppView;
 public class EntidadeBOImpl implements EntidadeBO {
 	
 	private AppView view;
-	private static DAO<Entidade> dao = new DAOImpl<Entidade>(Entidade.class);
+	protected static DAO<Entidade> dao = new DAOImpl<Entidade>(Entidade.class);
 
 	public EntidadeBOImpl(AppView view) {
 		this.view = view;

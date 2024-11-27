@@ -11,7 +11,7 @@ import org.fpij.jitakyoei.view.AppView;
 public class ProfessorBOImpl implements ProfessorBO {
 	
 	private AppView view;
-	private static DAO<Professor> dao = new DAOImpl<Professor>(Professor.class);
+	protected static DAO<Professor> dao = new DAOImpl<Professor>(Professor.class);
 
 	public ProfessorBOImpl(AppView view) {
 		this.view = view;
