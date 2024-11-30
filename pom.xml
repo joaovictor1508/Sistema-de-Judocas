@@ -38,7 +38,7 @@
       <scope>system</scope>
       <systemPath>${project.basedir}/lib/genesis/dist/genesis-annotation-jdk5-3.2.jar</systemPath>
     </dependency>
-    <!-- Dependência para JGoodies Forms -->
+
     <dependency>
       <groupId>com.jgoodies</groupId>
       <artifactId>forms</artifactId>
@@ -57,12 +57,11 @@
     <dependency>
         <groupId>net.java.dev.genesis</groupId>
         <artifactId>genesis-client-swing</artifactId>
-        <version>3.2</version> <!-- Coloque a versão correta -->
+        <version>3.2</version> 
         <scope>system</scope>
         <systemPath>${project.basedir}/lib/genesis/dist/genesis-client-swing-3.2.jar</systemPath>
     </dependency>
 
-    <!-- Dependência do db4o -->
     <dependency>
         <groupId>com.db4o</groupId>
         <artifactId>db4o</artifactId>
@@ -159,5 +158,13 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <resources>
+        <resource>
+            <directory>icones/icon_16x16</directory>
+        </resource>
+        <resource>
+            <directory>icones/icon_32x32</directory>
+        </resource>
+    </resources>
   </build>
 </project>
