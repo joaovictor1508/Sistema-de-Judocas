@@ -24,6 +24,9 @@ public class ProfessorBOImpl implements ProfessorBO {
 	@Override
 	public void createProfessor(Professor professor) throws Exception {
 		try {
+			if (professor == null) {
+				throw new IllegalArgumentException("O professor não pode ser nulo.");
+			}
 			professor.getFiliado().setId(FiliadoID.getNextID());
 			dao.save(professor);
 			fireModelChangeEvent(professor);

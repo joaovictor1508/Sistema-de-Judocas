@@ -56,7 +56,7 @@ public class ProfessorEntidadeBOImplTest {
         verify(mockView).handleModelChange(relacionamentos);
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testCreateProfessorEntidade_InvalidData() throws Exception {
         professorEntidadeBO.createProfessorEntidade(null);
     }
