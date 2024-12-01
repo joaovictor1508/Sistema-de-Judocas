@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: org.fpij.jitakyoei.model.dao.AlunoDaoTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.041 s <<< FAILURE! - in org.fpij.jitakyoei.model.dao.AlunoDaoTest
-org.fpij.jitakyoei.model.dao.AlunoDaoTest  Time elapsed: 0.041 s  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.037 s <<< FAILURE! - in org.fpij.jitakyoei.model.dao.AlunoDaoTest
+org.fpij.jitakyoei.model.dao.AlunoDaoTest  Time elapsed: 0.036 s  <<< ERROR!
 java.lang.NoClassDefFoundError: com/db4o/Db4o
 	at org.fpij.jitakyoei.model.dao.AlunoDaoTest.setUp(AlunoDaoTest.java:66)
 Caused by: java.lang.ClassNotFoundException: com.db4o.Db4o
 	at org.fpij.jitakyoei.model.dao.AlunoDaoTest.setUp(AlunoDaoTest.java:66)
 
-org.fpij.jitakyoei.model.dao.AlunoDaoTest  Time elapsed: 0.041 s  <<< ERROR!
+org.fpij.jitakyoei.model.dao.AlunoDaoTest  Time elapsed: 0.037 s  <<< ERROR!
 java.lang.NullPointerException: Cannot invoke "org.fpij.jitakyoei.model.dao.DAO.list()" because "org.fpij.jitakyoei.model.dao.AlunoDaoTest.alunoDao" is null
 	at org.fpij.jitakyoei.model.dao.AlunoDaoTest.clearDatabase(AlunoDaoTest.java:70)
 	at org.fpij.jitakyoei.model.dao.AlunoDaoTest.closeDatabase(AlunoDaoTest.java:150)

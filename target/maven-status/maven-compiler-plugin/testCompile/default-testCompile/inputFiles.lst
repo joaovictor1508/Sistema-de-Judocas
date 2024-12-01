@@ -1,2 +1,6 @@
-C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\src\test\java\org\fpij\jitakyoei\model\ModelIntegrationTests.java
-C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\src\test\java\org\fpij\jitakyoei\model\dao\AlunoDaoTest.java
+C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\src\test\java\org\fpij\jitakyoei\business\ProfessorBOImplTest.java
+C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\src\test\java\org\fpij\jitakyoei\business\EntidadeBOImplTest.java
+C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\src\test\java\org\fpij\jitakyoei\business\AlunoBOImplTest.java
+C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\src\test\java\org\fpij\jitakyoei\facade\AppFacadeImplTest.java
+C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\src\test\java\org\fpij\jitakyoei\dao\DAOImplTest.java
+C:\Users\gmira\Documents\GitHub\Sistema-de-Judocas\src\test\java\org\fpij\jitakyoei\business\ProfessorEntidadeBOImplTest.java
