@@ -22,22 +22,25 @@ public class ProfessorEntidadeBOImpl implements ProfessorEntidadeBO {
 	}
 
 	@Override
-	public void createProfessorEntidade(List<ProfessorEntidade> relacionamentos)
-	throws Exception {
+	public void createProfessorEntidade(List<ProfessorEntidade> relacionamentos) throws Exception {
 		System.out.println("ProfessorEntidadeBOImpl.createProfessorEntidade()");
 		try {
+			if (relacionamentos == null || relacionamentos.isEmpty()) {
+				throw new IllegalArgumentException("Relacionamentos não podem ser nulos ou vazios.");
+			}
 			for (ProfessorEntidade professorEntidade : relacionamentos) {
 				dao.save(professorEntidade);
 			}
 			fireModelChangeEvent(relacionamentos);
 		} catch (IllegalArgumentException e) {
-			throw new IllegalArgumentException( "Ocorreu um erro ao associar o professor às suas entidades!"
-				+ " Verifique se todos os dados foram preenchidos corretamente.");
+			throw new IllegalArgumentException(
+				"Ocorreu um erro ao associar o professor às suas entidades! "
+				+ "Verifique se todos os dados foram preenchidos corretamente.", e);
 		} catch (Exception e) {
-			e.printStackTrace();
-			throw new Exception("Desculpe, ocorreu um erro desconhecido ao salvar os relacionamentos.");
+			throw new Exception("Desculpe, ocorreu um erro desconhecido ao salvar os relacionamentos.", e);
 		}
 	}
+
 
 
 

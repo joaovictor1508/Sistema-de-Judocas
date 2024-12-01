@@ -4,6 +4,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
 
+import java.nio.channels.Pipe.SourceChannel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +38,6 @@ public class ProfessorBOImplTest {
     
         professorBO.createProfessor(professor);
     
-        // Verificar interações
         verify(mockDao).save(professor);
         verify(mockView).handleModelChange(professor);
     }
@@ -52,7 +52,9 @@ public class ProfessorBOImplTest {
             professorBO.createProfessor(professor);
             fail("Deveria lançar uma Exception");
         } catch (Exception e) {
-            assertTrue(e.getMessage().contains("Desculpe, ocorreu um erro desconhecido ao salvar o professor."));
+            System.out.println(e.getMessage());
+            assertTrue(e.getMessage().contains("Ocorreu um erro ao cadastrar o professor!"
+				+ " Verifique se todos os dados foram preenchidos corretamente."));
         }
     }
 
