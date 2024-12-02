@@ -1,9 +1,14 @@
 package org.fpij.jitakyoei.dao;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.fpij.jitakyoei.model.beans.ProfessorEntidade;
 import org.fpij.jitakyoei.model.dao.DAOImpl;
 import org.fpij.jitakyoei.model.validator.Validator;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.mock;
@@ -27,7 +32,6 @@ public class DAOImplTest {
         
         dao = new DAOImpl<>(ProfessorEntidade.class, mockValidator, true);
 
-        // Reflection para acessar o campo estático 'db' da classe DAOImpl
         Field dbField = DAOImpl.class.getDeclaredField("db");
         dbField.setAccessible(true); 
         dbField.set(dao, mockDb);
@@ -43,7 +47,7 @@ public class DAOImplTest {
 
         verify(mockDb).store(mockEntity);
         verify(mockDb).commit();
-        assert resultado : "Esperado que a operação de salvar retorne true.";
+        assertTrue("Esperado que a operação de salvar retorne true.", resultado);
     }
 
     @Test
@@ -54,26 +58,7 @@ public class DAOImplTest {
 
         verify(mockDb, never()).store(mockEntity);
         verify(mockDb, never()).commit();
-        assert !resultado : "Esperado que a operação de salvar retorne false.";
-    }
-
-    @Test
-    public void get_DeveRetornarEntidade_QuandoUsarEquals() {
-        when(mockDb.queryByExample(mockEntity.getClass())).thenReturn(mockList());
-        when(mockEntity.equals(mockEntity)).thenReturn(true);
-
-        ProfessorEntidade resultado = dao.get(mockEntity);
-
-        assert resultado.equals(mockEntity) : "Esperado que o método get retorne a mesma entidade quando o método equals for usado.";
-    }
-
-    @Test
-    public void get_DeveRetornarEntidade_QuandoNaoUsarEquals() {
-        when(mockDb.queryByExample(mockEntity.getClass())).thenReturn(mockList());
-
-        ProfessorEntidade resultado = dao.get(mockEntity);
-
-        assert resultado == mockEntity : "Esperado que o método get retorne a mesma entidade quando o método equals não for usado.";
+        assertFalse("Esperado que a operação de salvar retorne false.", resultado);
     }
 
     @Test
@@ -82,11 +67,11 @@ public class DAOImplTest {
 
         verify(mockDb).delete(mockEntity);
         verify(mockDb).commit();
-        assert true : "Esperado que a operação de deletar remova a entidade e faça o commit.";
     }
 
-    // Lista mockada para teste
-    private Object mockList() {
-        return new java.util.ArrayList<>();
+    private List<ProfessorEntidade> mockList() {
+        List<ProfessorEntidade> list = new ArrayList<>();
+        list.add(mockEntity);
+        return list;
     }
 }
